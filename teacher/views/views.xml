@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="action_view_teacher">
+            <field name="name">Teacher</field>
+            <field name="res_model">hr.employee</field>
+            <field name="view_mode">tree,form</field>
+<!--            <field name="domain" eval="[('department_id', '=', ref=(hr.))]"</field>-->
+        </record>
+        <menuitem id="school_menu_teacher" name="Teacher" parent="schoolodoo.school_menu_student" action="action_view_teacher"/>
+    </data>
+</odoo>
+
+<!--<record id="base.ir_cron_act" model="ir.actions.act_window">-->
+<!--            <field name="domain" eval="[('id','!=', ref('mail.ir_cron_module_update_notification'))]"/>-->
+<!--        </record>-->

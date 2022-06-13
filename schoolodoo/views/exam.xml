@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+        <record id="school_exam_tree" model="ir.ui.view">
+        <field name="name">Exam Details</field>
+        <field name="model">schoolodoo.exam</field>
+        <field name="arch" type="xml">
+            <tree string="Exam Details" editable="bottom">
+                <field name="name"/>
+                <field name="student_id"/>
+                <field name="subject_id"/>
+                <field name="student_marks"/>
+            </tree>
+        </field>
+        </record>
+        <record id="subject_exam_form" model="ir.ui.view">
+            <field name="name">Exam Details</field>
+            <field name="model">schoolodoo.exam</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name"/>
+                                <field name="student_id"/>
+                                <field name="subject_id"/>
+                                <field name="student_marks"/>
+                            </h1>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="subject_exam_pivot" model="ir.ui.view">
+            <field name="name">Marks</field>
+            <field name="model">schoolodoo.exam</field>
+            <field name="arch" type="xml">
+                <pivot string="Marks">
+                    <field name="student_id" type="row"/>
+                    <field name="subject_id" type="col"/>
+                </pivot>
+            </field>
+        </record>
+        <record id="view_graph_checkout" model="ir.ui.view">
+          <field name="model">schoolodoo.exam</field>
+          <field name="arch" type="xml">
+            <graph type="pie">
+                <field name="student_id" />
+                <field name="subject_id" />
+                <field name="student_marks" type="measure" />
+            </graph>
+          </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_view_exam">
+            <field name="name">Exam Details</field>
+            <field name="res_model">schoolodoo.exam</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+        </record>
+        <menuitem id="school_menu_exam" name="Exam" parent="school_menu_student" action="action_view_exam"/>
+    </data>
+</odoo>

@@ -8,11 +8,6 @@
             <field name="arch" type="xml">
                 <tree string="Estate">
                     <field name="name" />
-                    <field name="description" />
-                    <field name="postcode" />
-                    <field name="date_availability" />
-                    <field name="selling_price" />
-                    <field name="expected_price" />
                     <field name="bedrooms" />
                     <field name="living_area" />
                     <field name="facades" />
@@ -24,8 +19,6 @@
                     <field name="total" />
                     <field name="best_price" />
                     <field name="property_type_id"/>
-                    <field name="buyer_id"  />
-                    <field name="seller_id" />
                     <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                 </tree>
             </field>

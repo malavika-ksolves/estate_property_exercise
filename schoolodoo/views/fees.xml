@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+        <record id="fee_view_tree" model="ir.ui.view">
+        <field name="name">Student Fees</field>
+        <field name="model">schoolodoo.fees</field>
+        <field name="arch" type="xml">
+            <tree string="Students Details" editable="bottom">
+                <field name = "name"/>
+                <field name = "fees_date" />
+                <field name = "student_id" />
+                <field name = "fees_amount" />
+            </tree>
+        </field>
+        </record>
+        <record id="fee_view__form" model="ir.ui.view">
+            <field name="name">Student Fees</field>
+            <field name="model">schoolodoo.fees</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name = "name" />
+                            <field name = "fees_date" />
+                            <field name = "student_id" />
+                            <field name = "fees_amount" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_view_fees">
+            <field name = "name">Student Fees</field>
+            <field name = "res_model">schoolodoo.fees</field>
+            <field name = "view_mode">tree,form</field>
+        </record>
+        <menuitem id="school_menu_fees" name="Fees" parent="schoolodoo.school_menu_student" action="action_view_fees"/>
+    </data>
+</odoo>

@@ -2,7 +2,7 @@
 
 {
     'name': 'Estate',
-    'depends': ['base_setup','web', 'base'],
+    'depends': ['base_setup', 'web', 'base'],
     'data': [
 
         'security/ir.model.access.csv',
